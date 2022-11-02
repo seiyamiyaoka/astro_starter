@@ -1,11 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Navigation from '../components/Navigation.astro'
+import Greeting from '../components/Greeting.jsx'
+import VGreeting from '../components/Greeting.vue'
 ---
 
 <Layout title="Welcome to Astro.">
+	<Navigation />
 	<main>
 		<h1>My Astro Site</h1>
+		<Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]}/>
+		<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]}/>
+		<VGreeting client:load vmessages={["Hi", "Hello", "Howdy", "Hey there"]} />
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.

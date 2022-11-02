@@ -1,0 +1,52 @@
+---
+const pageTitle: string = "Abount Me"
+
+interface User {
+  id: number
+  name: string
+}
+
+const user: User = {
+  id: 1,
+  name: "taro"
+}
+
+interface Identity {
+  firstName: string,
+  country: string,
+  occupation: string,
+  hobbies: string[],
+}
+
+const identity: Identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+
+const clickHandler = (el: HTMLButtonElement) => {
+  console.log(123)
+}
+---
+<body>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/blogs">Blog</a>
+
+  <h1>{pageTitle}</h1>
+  <h2>... and my new Astro site!</h2>
+  <p>id: {user.id}, name: {user.name}</p>
+  <!-- <button onclick={`${() => clickHandler}`}></button> -->
+
+  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+
+  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+
+  <ul>
+    {skills.map((skil) => <li>{skil.toUpperCase()}</li>)}
+  </ul>
+</body>
